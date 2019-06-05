@@ -7,7 +7,7 @@ import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Switch from '@material-ui/core/Switch';
 
-import { recordAddress } from './redux/actionsCreator';
+import { recordAddress } from './redux/eventForm/actionsCreator';
 
 class SelectAddress extends Component {
   constructor(props) {

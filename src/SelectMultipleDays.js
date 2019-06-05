@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import Checkbox from '@material-ui/core/Checkbox';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 
-import { recordMultipleDays } from './redux/actionsCreator';
+import { recordMultipleDays } from './redux/eventForm/actionsCreator';
 
 const listInString = values => Object.keys(values).filter(day => values[day]).join();
 

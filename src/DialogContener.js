@@ -4,12 +4,11 @@ import DialogContent from '@material-ui/core/DialogContent';
 import { connect } from 'react-redux';
 import SelectTitle from './SelectTitle';
 import SelectDate from './SelectDate';
-import SelectAddress from './SelectAddress';
 import SelectMultipleDays from './SelectMultipleDays';
 
 import SelectionMenu from './SelectionMenu';
 
-import { recordContact, recordCategory, recordFrequency } from './redux/actionsCreator';
+import { recordContact, recordCategory, recordFrequency } from './redux/eventForm/actionsCreator';
 
 const DialogContener = ({
   frequency,
@@ -18,7 +17,7 @@ const DialogContener = ({
     return (
       <DialogContent>
         <SelectTitle />
-        <SelectAddress />
+        {/* <SelectAddress /> */}
         <SelectDate />
         <SelectionMenu />
       </DialogContent>
@@ -27,7 +26,7 @@ const DialogContener = ({
   return (
     <DialogContent>
       <SelectTitle />
-      <SelectAddress />
+      {/* <SelectAddress /> */}
       <SelectDate />
       <SelectionMenu />
       <SelectMultipleDays />

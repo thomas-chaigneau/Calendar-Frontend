@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import TextField from '@material-ui/core/TextField';
 
-import { recordTitle } from './redux/actionsCreator';
+import { recordTitle } from './redux/eventForm/actionsCreator';
 
 class SelectTitle extends Component {
   constructor(props) {

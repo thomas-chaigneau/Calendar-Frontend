@@ -6,7 +6,8 @@ import PropTypes from 'prop-types';
 
 import DialogOpener from './DialogOpener';
 
-import { recordDateAndTime, openEventDialog, getEventList } from './redux/actionsCreator';
+import { recordDateAndTime, openEventDialog } from './redux/eventForm/actionsCreator';
+import { getEventList } from './redux/api/actionsCreator';
 
 import './App.css';
 

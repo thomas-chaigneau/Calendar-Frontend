@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import TextField from '@material-ui/core/TextField';
-import { recordDateAndTime } from './redux/actionsCreator';
+import { recordDateAndTime } from './redux/eventForm/actionsCreator';
 
 class SelectDate extends Component {
   constructor(props) {

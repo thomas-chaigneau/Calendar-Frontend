@@ -7,18 +7,15 @@ import { connect } from 'react-redux';
 
 import SelectionMenuItems from './SelectionMenuItems';
 
-import { recordContact, recordCategory, recordFrequency } from './redux/actionsCreator';
+import { recordContact, recordCategory, recordFrequency } from './redux/eventForm/actionsCreator';
 
 const SelectionMenu = ({
   listOfcontact,
-  listOfCategories,
   listOfFrequency,
   saveContact,
-  saveCategory,
   saveFrequency,
   frequency,
   contact,
-  category,
 }) => (
   [
     {
@@ -28,14 +25,6 @@ const SelectionMenu = ({
       recordFunction: saveContact,
       fieldValue: contact,
       FormHelperText: 'Assigner un responsable à cet événement',
-    },
-    {
-      InputLabel: 'Catégorie',
-      type: 'category',
-      liste: listOfCategories,
-      recordFunction: saveCategory,
-      fieldValue: category,
-      FormHelperText: 'Assigner une catégorie à cet événement',
     },
     {
       InputLabel: 'Fréquence',
