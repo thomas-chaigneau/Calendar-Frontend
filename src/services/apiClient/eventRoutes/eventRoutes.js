@@ -1,7 +1,6 @@
 import ApiClient from '../apiClient';
 
-const apiClient = new ApiClient(process.env.API_URL);
-
+const apiClient = new ApiClient(process.env.REACT_APP_API_URL);
 const ROUTE = '/events';
 
 export const getAllEvents = () => apiClient.get(ROUTE);

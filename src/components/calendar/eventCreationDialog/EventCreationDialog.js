@@ -1,22 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogTitle from '@material-ui/core/DialogTitle';
+import DialogContent from '@material-ui/core/DialogContent';
 
-import { openEventDialog } from './redux/eventForm/actionsCreator';
-import { postNewEvent } from './redux/api/actionsCreator';
+import SelectTitle from './SelectTitle';
+import SelectDate from './SelectDate';
+import SelectFrequency from './SelectFrequency';
 
-import DialogContener from './DialogContener';
+import { openEventDialog } from '../../../redux/eventForm/actionsCreator';
+import { postNewEvent } from '../../../redux/api/actionsCreator';
 
-const DialogOpener = ({ isOpen, allInfo, OpenOrCloseDialog, postNewEvent }) => (
+
+const EventCreationDialog = ({ isOpen, allInfo, OpenOrCloseDialog, postNewEvent }) => (
   <Dialog open={isOpen} onClose={() => OpenOrCloseDialog()} aria-labelledby="form-dialog-title">
     <DialogTitle id="form-dialog-title">Nouvel événement</DialogTitle>
 
-    <DialogContener />
+    <DialogContent>
+      <SelectTitle />
+      <SelectDate />
+      <SelectFrequency />
+    </DialogContent>
 
     <DialogActions>
       <Button onClick={() => OpenOrCloseDialog()} color="primary">Annuler</Button>
@@ -25,7 +32,7 @@ const DialogOpener = ({ isOpen, allInfo, OpenOrCloseDialog, postNewEvent }) => (
   </Dialog>
 );
 
-DialogOpener.propTypes = {
+EventCreationDialog.propTypes = {
   isOpen: PropTypes.bool.isRequired,
   allInfo: PropTypes.object.isRequired,
   postNewEvent: PropTypes.func.isRequired,
@@ -42,4 +49,4 @@ const mapDispatchToProps = dispatch => ({
   OpenOrCloseDialog: bool => dispatch(openEventDialog(bool)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(DialogOpener);
+export default connect(mapStateToProps, mapDispatchToProps)(EventCreationDialog);

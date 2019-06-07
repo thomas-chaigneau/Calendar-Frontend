@@ -9,7 +9,7 @@ class ApiClient {
     return instance;
   }
 
-  get = (url, options) => this.apiclient.get(url, options);
+  get = url => this.apiclient.get(url);
 
   post = (url, options) => this.apiclient.post(url, options);
 

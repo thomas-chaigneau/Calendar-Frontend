@@ -1,48 +1,37 @@
-import {
-  OPEN_DIALOG_EVENT,
-  RECORD_EVENT_TITLE,
-  RECORD_FREQUENCY,
-  RECORD_MULTIPLES_DAYS,
-  RECORD_DATE,
-} from './actionsTypes';
+import * as actionTypes from './actionsTypes';
 
 export const openEventDialog = () => ({
-  type: OPEN_DIALOG_EVENT,
+  type: actionTypes.OPEN_DIALOG_EVENT,
 });
 
 export const recordTitle = title => ({
-  type: RECORD_EVENT_TITLE,
+  type: actionTypes.RECORD_EVENT_TITLE,
   title,
 });
 
-export const recordAddress = (OtherAddressChecked, preciseAddress) => ({
-  type: RECORD_EVENT_ADDRESS,
-  OtherAddressChecked,
-  address: preciseAddress,
-});
-
-export const recordDateAndTime = (startingDate, endingDate) => ({
-  type: RECORD_DATE,
+export const recordDate = startingDate => ({
+  type: actionTypes.RECORD_DATE,
   startingDate,
-  endingDate,
 });
 
-export const recordContact = contact => ({
-  type: RECORD_CONTACT,
-  contact,
+export const recordHour = startingHour => ({
+  type: actionTypes.RECORD_HOUR,
+  startingHour,
 });
 
-export const recordCategory = category => ({
-  type: RECORD_CATEGORY,
-  category,
+export const recordDuration = duration => ({
+  type: actionTypes.RECORD_DURATION,
+  duration,
 });
 
-export const recordFrequency = frequency => ({
-  type: RECORD_FREQUENCY,
+export const recordFrequency = (frequency, amount, unitOfTime) => ({
+  type: actionTypes.RECORD_FREQUENCY,
   frequency,
+  amount,
+  unitOfTime,
 });
 
-export const recordMultipleDays = days => ({
-  type: RECORD_MULTIPLES_DAYS,
-  days,
-});
+// export const recordMultipleDays = days => ({
+//   type: actionTypes.RECORD_MULTIPLES_DAYS,
+//   days,
+// });

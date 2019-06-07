@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import TextField from '@material-ui/core/TextField';
 
-import { recordTitle } from './redux/eventForm/actionsCreator';
+import { recordTitle } from '../../../redux/eventForm/actionsCreator';
+
 
 class SelectTitle extends Component {
   constructor(props) {
@@ -18,7 +19,7 @@ class SelectTitle extends Component {
   }
 
   render() {
-    const { record } = this.props;
+    const { recordTitle } = this.props;
     const { title } = this.state;
     return (
       <TextField
@@ -31,18 +32,18 @@ class SelectTitle extends Component {
         name="title"
         value={title}
         onChange={this.handleChange}
-        onBlur={() => record(title)}
+        onBlur={() => recordTitle(title)}
       />
     );
   }
 }
 
 SelectTitle.propTypes = {
-  record: PropTypes.func.isRequired,
+  recordTitle: PropTypes.func.isRequired,
 };
 
 const mapDispatchToProps = dispatch => ({
-  record: title => dispatch(recordTitle(title)),
+  recordTitle: title => dispatch(recordTitle(title)),
 });
 
 export default connect(null, mapDispatchToProps)(SelectTitle);
