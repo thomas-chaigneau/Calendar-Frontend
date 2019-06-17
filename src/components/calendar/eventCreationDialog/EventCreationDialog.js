@@ -7,9 +7,9 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import DialogContent from '@material-ui/core/DialogContent';
 
-import SelectTitle from './SelectTitle';
-import SelectDate from './SelectDate';
-import SelectFrequency from './SelectFrequency';
+import SelectTitle from './eventCreationComponents/SelectTitle';
+import SelectDate from './eventCreationComponents/SelectDate';
+import SelectFrequency from './eventCreationComponents/SelectFrequency';
 
 import { openEventDialog } from '../../../redux/eventForm/actionsCreator';
 import { postNewEvent } from '../../../redux/api/actionsCreator';
@@ -17,7 +17,7 @@ import { postNewEvent } from '../../../redux/api/actionsCreator';
 
 const EventCreationDialog = ({ isOpen, allInfo, OpenOrCloseDialog, postNewEvent }) => (
   <Dialog open={isOpen} onClose={() => OpenOrCloseDialog()} aria-labelledby="form-dialog-title">
-    <DialogTitle id="form-dialog-title">Nouvel événement</DialogTitle>
+    <DialogTitle data-testid="form-dialog-title" id="form-dialog-title">Nouvel événement</DialogTitle>
 
     <DialogContent>
       <SelectTitle />
@@ -26,7 +26,7 @@ const EventCreationDialog = ({ isOpen, allInfo, OpenOrCloseDialog, postNewEvent 
     </DialogContent>
 
     <DialogActions>
-      <Button onClick={() => OpenOrCloseDialog()} color="primary">Annuler</Button>
+      <Button data-testid="cancel-button" onClick={() => OpenOrCloseDialog()} color="primary">Annuler</Button>
       <Button onClick={() => postNewEvent(allInfo)} color="primary">Enregistrer</Button>
     </DialogActions>
   </Dialog>

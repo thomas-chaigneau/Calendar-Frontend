@@ -8,8 +8,10 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
 
+import DaySelector from './DaySelector';
 
-import { recordFrequency } from '../../../redux/eventForm/actionsCreator';
+
+import { recordFrequency } from '../../../../redux/eventForm/actionsCreator';
 
 const frequencies = [
   { label: 'Quotidiennement', value: 'daily' },
@@ -56,6 +58,7 @@ class SelectFrequency extends Component {
 
   render() {
     const { iteration, frequency, amount, unitOfTime } = this.state;
+    // console.log(frequency)
     return (
       <div>
         <FormControlLabel
@@ -95,6 +98,8 @@ class SelectFrequency extends Component {
             >
               {periods.map(frenq => <MenuItem key={frenq.value} value={frenq.value}>{frenq.label}</MenuItem>)}
             </Select>
+            {frequency === 'weekly' ? <DaySelector /> : null}
+            {frequency === 'monthly' ? <span> to do : delete days and weeks selextion, every first saturay of a month, etc. </span> : null}
           </div>
         ) : null}
       </div>
@@ -109,4 +114,5 @@ SelectFrequency.propTypes = {
 const mapDispatchToProps = dispatch => ({
   recordFrequency: (frequency, amount, unitOfTime) => dispatch(recordFrequency(frequency, amount, unitOfTime)),
 });
+
 export default connect(null, mapDispatchToProps)(SelectFrequency);

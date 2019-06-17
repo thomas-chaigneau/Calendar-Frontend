@@ -47,11 +47,11 @@ export default (state = initialState, action) => {
         amount: action.amount,
         unitOfTime: action.unitOfTime,
       };
-    // case actionTypes.RECORD_MULTIPLES_DAYS:
-    //   return {
-    //     ...state,
-    //     daysSelected: action.days,
-    //   };
+    case actionTypes.RECORD_REPETED_DAYS:
+      return {
+        ...state,
+        daysSelected: action.days,
+      };
     default:
       return state;
   }

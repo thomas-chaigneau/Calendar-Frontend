@@ -31,7 +31,7 @@ export const recordFrequency = (frequency, amount, unitOfTime) => ({
   unitOfTime,
 });
 
-// export const recordMultipleDays = days => ({
-//   type: actionTypes.RECORD_MULTIPLES_DAYS,
-//   days,
-// });
+export const recordRepetedDays = days => ({
+  type: actionTypes.RECORD_REPETED_DAYS,
+  days,
+});
